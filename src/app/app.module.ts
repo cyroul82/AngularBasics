@@ -10,6 +10,7 @@ import { UserstoryDetailComponent } from './userstory/userstory-detail/userstory
 import { UserstoryListComponent } from './userstory/userstory-list/userstory-list.component';
 import { SprintPlanningComponent } from './sprint-planning/sprint-planning.component';
 import { UserstoryEditComponent } from './userstory/userstory-edit/userstory-edit.component';
+import { UserstoryItemComponent } from './userstory/userstory-list/userstory-item/userstory-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserstoryEditComponent } from './userstory/userstory-edit/userstory-edi
     UserstoryDetailComponent,
     UserstoryListComponent,
     SprintPlanningComponent,
-    UserstoryEditComponent
+    UserstoryEditComponent,
+    UserstoryItemComponent
   ],
   imports: [
     BrowserModule,
