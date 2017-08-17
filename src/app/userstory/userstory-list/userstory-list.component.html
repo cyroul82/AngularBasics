@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
+    <app-userstory-edit (userStoryAdded)="onUserStoryAdded($event)"></app-userstory-edit>
+    <hr>
     <button class="btn btn-success"> New UserStory</button>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-userstory-item *ngFor="let userstory of userstories" [userstory]="userstory"></app-userstory-item>
+      <app-userstory-item *ngFor="let userstory of userstories" [userstory]="userstory" (click)="clickItem(userstory)"></app-userstory-item>
     </div>
   </div>
 </div>

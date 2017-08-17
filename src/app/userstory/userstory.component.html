@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <app-userstory-edit></app-userstory-edit>
-      <hr>
-      <app-userstory-list></app-userstory-list>
+      <app-userstory-list (userStorySelected)="onUserStorySelected($event)"></app-userstory-list>
     </div>
     <div class="col-md-8">
-      <app-userstory-detail></app-userstory-detail>
+      <app-userstory-detail *ngIf="userstory; else infoText" [userstory]="userstory"></app-userstory-detail>
+      <ng-template #infoText>
+        <p>Please select a UserStory</p>
+      </ng-template>
     </div>
   </div>
 

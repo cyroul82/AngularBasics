@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserStory } from '../userstory.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { UserStory } from '../userstory.model';
   styleUrls: ['./userstory-list.component.css']
 })
 export class UserstoryListComponent implements OnInit {
-
+  @Output() userStorySelected = new EventEmitter<UserStory>();
   userstories: UserStory[] = [
     new UserStory('User Connexion', 'A user is able to connect to the app', 100),
     new UserStory('Add article', 'A user is able to add an article', 90)
@@ -16,6 +16,14 @@ export class UserstoryListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clickItem(userstory: UserStory) {
+    this.userStorySelected.emit(userstory);
+  }
+
+  onUserStoryAdded(userStory: UserStory) {
+    this.userstories.push(userStory);
   }
 
 }
